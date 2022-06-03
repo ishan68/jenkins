@@ -1,0 +1,25 @@
+To build a ci/cd workflow to automate a java project with production and staging environment
+We will have to create 3 jobs e.g
+1 - packagae_app - to build a artifact
+2 - Deploy_tomcat_staging 
+3 - Deploy_tomcat_production
+
+1 - IN packagae_app - add a description
+select discard builds add 5 and 5
+In SCM use repo url and branch whatever you want to build from
+In poll scm schedule it for every minute
+in build environment choose delete wordkspacebefore build and timestamp
+BUild sectiom Archive the artifacts and choose **/*.war
+Build other projects - to Deploy_tomcat_staging
+
+--------
+Create new job with staging
+In build step add copy artifcats from other project and use package_app name
+copy **/*.war 
+In post build  add a project with manual step
+Deploy_tomcat_production
+
+
+
+
+
